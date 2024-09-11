@@ -1,0 +1,22 @@
+{
+  "name": "childish-sports",
+  "version": "1.0.0",
+  "description": "\"Children's Sports\" is a desktop and mobile application for convenient accounting and control of clients, counting money for various attractions.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/serg-kyrios/Childish-sports.git"
+  },
+  "author": "Kirilyuk Sergey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/serg-kyrios/Childish-sports/issues"
+  },
+  "homepage": "https://github.com/serg-kyrios/Childish-sports#readme",
+  "dependencies": {
+    "json-server": "^1.0.0-beta.2"
+  }
+}

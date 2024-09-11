@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="uk">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>JavaScript</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header>
+            <h1>Заголовок моєї сторінки</h1>
+            <nav>
+                <ul class="form">
+                    <li><a href="#">Головна</a></li>
+                    <li><a href="#">Про нас</a></li>
+                    <li><a href="#">Контакти</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section>
+                <h2>Розділ 1</h2>
+                <!-- <p>Текст першого розділу.</p> -->
+                <input type="text" id="clientName" placeholder="Ім'я клієнта" />
+                <input
+                    type="number"
+                    id="serviceTime"
+                    placeholder="Час обслуговування (хвилини)"
+                />
+                <input type="number" id="serviceCost" placeholder="Вартість" />
+                <button id="recordClientButton">Записати</button>
+                <!-- <button onclick="recordClient()">Записати</button> -->
+                <div id="clientsList"></div>
+                <!-- <p>Текст першого розділу.</p> -->
+            </section>
+            <section>
+                <h2>Розділ 2</h2>
+                <p>Текст другого розділу.</p>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2023 Всі права захищено.</p>
+        </footer>
+        <script src="script.js"></script>
+    </body>
+</html>
