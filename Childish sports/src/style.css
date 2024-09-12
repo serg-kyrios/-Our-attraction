@@ -70,3 +70,21 @@ p {
     background: transparent;
     cursor: pointer;
 }
+/* стилі для вспливаючого віконця */
+.popup-message {
+    display: none; /* Приховане за замовчуванням */
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f44336; /* Червоний колір для повідомлень про помилку */
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    z-index: 1000;
+    font-size: 16px;
+}
+
+.popup-message.show {
+    display: block; /* Показуємо віконце, коли воно активне */
+}

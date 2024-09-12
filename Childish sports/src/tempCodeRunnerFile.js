@@ -1,3 +1,4 @@
-boxesQuery.forEach((box) => {
-    if (box.matches('.this')) console.log(box);
-});
+    setTimeout(() => {
+        popup.classList.remove('show');
+    }, 3000);
+}

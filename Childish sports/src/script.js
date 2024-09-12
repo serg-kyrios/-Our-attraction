@@ -10,19 +10,55 @@ function calculateTotalCost(time) {
     return time * costPerMinute;
 }
 
+function showPopupMessage(message) {
+    const popup = document.getElementById('popupMessage');
+    popup.textContent = message;
+    popup.classList.add('show');
+
+    // Ховаємо повідомлення через 3 секунди
+    setTimeout(() => {
+        popup.classList.remove('show');
+    }, 3000);
+}
+
 function recordClient() {
     // Отримуємо дані з полів введення
-    const clientName = document.getElementById('clientName').value;
+    const clientName = document.getElementById('clientName').value.trim();
     const serviceTime = parseFloat(
         document.getElementById('serviceTime').value
     );
+    const serviceCost = parseFloat(
+        document.getElementById('serviceCost').value
+    );
+
+    // Перевірка на правильність введених даних
+    if (clientName === '') {
+        showPopupMessage("Будь ласка, введіть ім'я клієнта.");
+        return;
+    }
+
+    if (isNaN(serviceTime) || serviceTime <= 0) {
+        showPopupMessage(
+            'Будь ласка, введіть коректний час обслуговування (хвилини), більше за 0.'
+        );
+        return;
+    }
+
+    if (isNaN(serviceCost) || serviceCost <= 0) {
+        showPopupMessage(
+            'Будь ласка, введіть коректну вартість послуги, більше за 0.'
+        );
+        return;
+    }
+
+    // Розрахунок суми
     const totalCost = calculateTotalCost(serviceTime);
 
-    // Створимо об'єкт клієнта, включаючи поле для суми
+    // Створимо об'єкт клієнта
     const client = {
         name: clientName,
         time: serviceTime,
-        totalCost: totalCost, // Додаємо розраховану суму в об'єкт клієнта
+        totalCost: totalCost,
     };
 
     // Додаємо клієнта до масиву
