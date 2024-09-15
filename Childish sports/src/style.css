@@ -1,3 +1,7 @@
+body {
+    margin: 0;
+    background-color: #c4df9b;
+}
 .box {
     position: absolute;
     width: 100px;
@@ -87,4 +91,18 @@ p {
 
 .popup-message.show {
     display: block; /* Показуємо віконце, коли воно активне */
+}
+/* стилі підрахунку клієнтів */
+#totalClients,
+#totalCost {
+    font-size: 1.5rem; /* Збільшений розмір шрифту */
+    font-weight: bold; /* Жирний текст */
+    color: #2c3e50; /* Темний синьо-сірий колір */
+    margin: 10px 0; /* Відступи зверху та знизу */
+    padding: 10px; /* Внутрішні відступи */
+    background-color: #ecf0f1; /* Світло-сірий фон */
+    border: 2px solid #2980b9; /* Синя рамка */
+    border-radius: 5px; /* Згладжені кути */
+    text-align: center; /* Вирівнювання по центру */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тінь для додаткового ефекту */
 }
