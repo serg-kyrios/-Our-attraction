@@ -134,3 +134,113 @@ function displayClients() {
 document
     .getElementById('recordClientButton')
     .addEventListener('click', recordClient);
+
+//clock
+function getRandomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function rotateClockHands() {
+    const now = new Date();
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+    const seconds = now.getSeconds();
+
+    const hourHand = document.getElementById('hourHand');
+    const minuteHand = document.getElementById('minuteHand');
+    const secondHand = document.getElementById('secondHand');
+    const clock = document.getElementById('clock');
+
+    const hourDegrees = (hours % 12) * 30 + minutes / 2;
+    const minuteDegrees = minutes * 6;
+    const secondDegrees = seconds * 6;
+
+    hourHand.style.transform = `rotate(${hourDegrees}deg)`;
+    minuteHand.style.transform = `rotate(${minuteDegrees}deg)`;
+    secondHand.style.transform = `rotate(${secondDegrees}deg)`;
+    const red = getRandomNumber(0, 255);
+    const green = getRandomNumber(0, 255);
+    const blue = getRandomNumber(0, 255);
+    //clock.style.backgroundColor = `rgb(${red},${green},${blue})`;
+}
+
+setInterval(rotateClockHands, 1000);
+
+// calendar
+
+const calendar = document.querySelector('.calendar');
+const monthYear = document.querySelector('.month-year');
+const daysContainer = document.querySelector('.days');
+
+const date = new Date();
+const monthNames = [
+    'Січень',
+    'Лютий',
+    'Березень',
+    'Квітень',
+    'Травень',
+    'Червень',
+    'Липень',
+    'Серпень',
+    'Вересень',
+    'Жовтень',
+    'Листопад',
+    'Грудень',
+];
+
+// Оновлюємо заголовок місяця та року
+monthYear.textContent = `${monthNames[date.getMonth()]} ${date.getFullYear()}`;
+
+// Функція для створення днів місяця
+function createDays() {
+    daysContainer.innerHTML = ''; // Очищаємо контейнер
+
+    const firstDayOfMonth =
+        (new Date(date.getFullYear(), date.getMonth(), 1).getDay() + 6) % 7; // Починаємо з понеділка
+    const daysInMonth = new Date(
+        date.getFullYear(),
+        date.getMonth() + 1,
+        0
+    ).getDate();
+    const daysInPrevMonth = new Date(
+        date.getFullYear(),
+        date.getMonth(),
+        0
+    ).getDate(); // Кількість днів у попередньому місяці
+
+    // Додаємо дні попереднього місяця
+    for (let i = firstDayOfMonth; i > 0; i--) {
+        const day = document.createElement('div');
+        day.textContent = daysInPrevMonth - i + 1;
+        day.classList.add('prev-month');
+        daysContainer.appendChild(day);
+    }
+
+    // Додаємо дні поточного місяця
+    for (let i = 1; i <= daysInMonth; i++) {
+        const day = document.createElement('div');
+        day.textContent = i;
+
+        // Підсвічуємо поточну дату
+        if (
+            i === date.getDate() &&
+            date.getMonth() === new Date().getMonth() &&
+            date.getFullYear() === new Date().getFullYear()
+        ) {
+            day.classList.add('current-day');
+        }
+
+        daysContainer.appendChild(day);
+    }
+
+    // Додаємо дні наступного місяця, щоб заповнити решту місць до кінця тижня
+    const remainingDays = 42 - (firstDayOfMonth + daysInMonth); // 42 — це кількість місць у календарі (6 тижнів по 7 днів)
+    for (let i = 1; i <= remainingDays; i++) {
+        const day = document.createElement('div');
+        day.textContent = i;
+        day.classList.add('next-month');
+        daysContainer.appendChild(day);
+    }
+}
+
+createDays();
