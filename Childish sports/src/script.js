@@ -1,7 +1,5 @@
 'use strict';
 
-let clients = []; // Масив для зберігання інформації про клієнтів
-
 // Функція для розрахунку суми
 function calculateTotalCost(time) {
     const costPerMinute = parseFloat(
@@ -21,7 +19,7 @@ function showPopupMessage(message) {
     }, 3000);
 }
 
-//let clients = []; // Масив для зберігання інформації про клієнтів
+let clients = []; // Масив для зберігання інформації про клієнтів
 let totalSum = 0; // Змінна для загальної суми
 let totalClients = 0; // Змінна для кількості клієнтів
 
@@ -136,16 +134,3 @@ function displayClients() {
 document
     .getElementById('recordClientButton')
     .addEventListener('click', recordClient);
-// Функція для збереження даних в localStorage
-function saveData() {
-    localStorage.setItem('clients', JSON.stringify(clients));
-}
-
-// Функція для завантаження даних з localStorage при завантаженні сторінки
-function loadData() {
-    const storedData = localStorage.getItem('clients');
-    if (storedData) {
-        clients = JSON.parse(storedData);
-        displayClients();
-    }
-}

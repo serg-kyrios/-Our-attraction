@@ -1,46 +1,48 @@
 body {
-    margin: 0;
-    background-color: #c4df9b;
+    /* margin: 0; */
+    background-color: rgb(177, 203, 205);
+    margin: 10px auto;
+    width: 470px;
 }
-.box {
+/* .box {
     position: absolute;
     width: 100px;
     height: 100px;
     background-color: blue;
-}
-.wrapper {
+} */
+/* .wrapper {
     position: relative;
     width: 400px;
     height: 400px;
     border: 3px solid red;
-}
-.btn-block {
+} */
+/* .btn-block {
     padding: 10px;
     background-color: grey;
     margin-top: 10px;
-}
+} */
+
 button {
+    border: none;
     margin-bottom: 10px;
     margin-top: 10px;
-    width: 100px;
+    width: 130px;
     height: 40px;
-    background-color: yellow;
-    border: none;
-    transition: 0.3s all;
+    color: #190909;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+        7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+    outline: none;
 }
 
-.blue {
-    background-color: blue;
-}
-
-.red {
-    background-color: red;
-}
 /* ////////////////////////// */
-body {
-    margin: 10px auto;
-    width: 470px;
-}
 
 h3 {
     margin: 0;
@@ -54,14 +56,14 @@ p {
     padding: 0 0 0.5em;
 }
 
-.pane {
+/* .pane {
     background: #edf5e1;
     padding: 10px 20px 10px;
     border-top: solid 2px #c4df9b;
     position: relative;
-}
+} */
 
-.remove-button {
+/* .remove-button {
     position: absolute;
     font-size: 110%;
     top: 0;
@@ -73,7 +75,7 @@ p {
     border: none;
     background: transparent;
     cursor: pointer;
-}
+} */
 /* стилі для вспливаючого віконця */
 .popup-message {
     display: none; /* Приховане за замовчуванням */
