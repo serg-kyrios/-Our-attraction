@@ -167,7 +167,6 @@ function rotateClockHands() {
 setInterval(rotateClockHands, 1000);
 
 // calendar
-
 const calendar = document.querySelector('.calendar');
 const monthYear = document.querySelector('.month-year');
 const daysContainer = document.querySelector('.days');
@@ -212,7 +211,7 @@ function createDays() {
     for (let i = firstDayOfMonth; i > 0; i--) {
         const day = document.createElement('div');
         day.textContent = daysInPrevMonth - i + 1;
-        day.classList.add('prev-month');
+        day.classList.add('prev-month', 'col');
         daysContainer.appendChild(day);
     }
 
@@ -220,6 +219,7 @@ function createDays() {
     for (let i = 1; i <= daysInMonth; i++) {
         const day = document.createElement('div');
         day.textContent = i;
+        day.classList.add('col');
 
         // Підсвічуємо поточну дату
         if (
@@ -238,7 +238,7 @@ function createDays() {
     for (let i = 1; i <= remainingDays; i++) {
         const day = document.createElement('div');
         day.textContent = i;
-        day.classList.add('next-month');
+        day.classList.add('next-month', 'col');
         daysContainer.appendChild(day);
     }
 }
