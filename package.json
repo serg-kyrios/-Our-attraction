@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/serg-kyrios/Childish-sports#readme",
   "dependencies": {
+    "bootstrap": "^5.3.3",
     "json-server": "^1.0.0-beta.2"
   }
 }
