@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="uk">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>JavaScript</title>
+        <link rel="stylesheet" href="style.css" />
+        <!-- Підключаємо Bootstrap -->
+        <link
+         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <body>
+    <div>
+        <header>
+            <!-- Hero section (головний екран) -->
+            <div class="hero-section d-flex flex-column justify-content-center align-items-center">
+            <h1>Заголовок моєї сторінки</h1>
+            <div class="dataClock d-flex flex-column justify-content-center align-items-center">
+                <div class="clock" id="clock">
+                    <div class="hour" id="hour1">1</div>
+                    <div class="hour" id="hour2">2</div>
+                    <div class="hour" id="hour3">3</div>
+                    <div class="hour" id="hour4">4</div>
+                    <div class="hour" id="hour5">5</div>
+                    <div class="hour" id="hour6">6</div>
+                    <div class="hour" id="hour7">7</div>
+                    <div class="hour" id="hour8">8</div>
+                    <div class="hour" id="hour9">9</div>
+                    <div class="hour" id="hour10">10</div>
+                    <div class="hour" id="hour11">11</div>
+                    <div class="hour" id="hour12">12</div>
+
+                    <div class="hour-hand" id="hourHand"></div>
+                    <div class="minute-hand" id="minuteHand"></div>
+                    <div class="second-hand" id="secondHand"></div>
+                    <div class="center"></div>
+                </div>
+
+                <div class="calendar">
+                    <div class="month-year"></div>
+                    <div class="weekdays">
+                        <div>Пн</div>
+                        <div>Вт</div>
+                        <div>Ср</div>
+                        <div>Чт</div>
+                        <div>Пт</div>
+                        <div>Сб</div>
+                        <div>Нд</div>
+                    </div>
+                    <div class="days"></div>
+                </div>
+            </div>
+            <nav>
+                <ul class="form">
+                    <li><a href="#">Головна</a></li>
+                    <li><a href="#">Про нас</a></li>
+                    <li><a href="#">Контакти</a></li>
+                </ul>
+            </nav>
+        <!-- </header> -->
+
+        <main>
+            <section>
+                <h2>Розділ 1</h2>
+                <!-- <p>Текст першого розділу.</p> -->
+                <input type="text" id="clientName" placeholder="Ім'я клієнта" />
+                <input
+                    type="number"
+                    id="serviceTime"
+                    placeholder="Час обслуговування (хвилини)"
+                />
+                <input type="number" id="serviceCost" placeholder="Вартість" />
+                <button id="recordClientButton">Записати</button>
+                <!-- <button onclick="recordClient()">Записати</button> -->
+                <div id="clientsList"></div>
+                <!-- <p>Текст першого розділу.</p> -->
+            </section>
+            <section>
+                <h2>Розділ 2</h2>
+                <div id="popupMessage" class="popup-message"></div>
+                <p>Текст другого розділу.</p>
+                <p id="totalClients">Загальна кількість відвідувачів: 0</p>
+                <p id="totalCost">Загальна сума: 0 грн</p>
+            </section>
+        </main>
+    </div>
+          <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4">
+        <p class="mb-0">&copy; 2024 My Project. All rights reserved. <br>  &copy; Всі права захищено.</p>
+    </footer>
+        <!-- Підключаємо Bootstrap JS (для інтерактивності) -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
