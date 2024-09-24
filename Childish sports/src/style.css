@@ -53,26 +53,6 @@ p {
     padding: 0 0 0.5em;
 }
 
-/* .pane {
-    background: #edf5e1;
-    padding: 10px 20px 10px;
-    border-top: solid 2px #c4df9b;
-    position: relative;
-} */
-
-/* .remove-button {
-    position: absolute;
-    font-size: 110%;
-    top: 0;
-    color: darkred;
-    right: 10px;
-    display: block;
-    width: 24px;
-    height: 24px;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-} */
 /* стилі для вспливаючого віконця */
 .popup-message {
     display: none; /* Приховане за замовчуванням */
@@ -112,7 +92,7 @@ p {
     height: 225px;
     border-radius: 50%;
     border: 10px solid #333;
-    background-color: #f0f0f0;
+    background-color: #bbc9ed;
 }
 .hour {
     position: absolute;
@@ -220,6 +200,7 @@ p {
     text-align: center;
     font-weight: bold;
     margin-bottom: 10px;
+    color: #190909;
 }
 
 .weekdays {
@@ -232,8 +213,9 @@ p {
 .days div {
     text-align: center;
     padding: 10px;
-    background-color: #f0f0f0;
+    background-color: #577ad9;
     border-radius: 4px;
+    color: rgb(17, 18, 18);
 }
 
 .days {
@@ -252,13 +234,13 @@ p {
 }
 
 .current-day {
-    background-color: #f39c12; /* Підсвітка для поточної дати */
-    color: #fff;
+    color: #f39c12; /* Підсвітка для поточної дати */
+    font-weight: 900;
 }
 
 .prev-month,
 .next-month {
-    color: #ccc; /* Стиль для днів попереднього та наступного місяців */
+    color: #2a2626; /* Стиль для днів попереднього та наступного місяців */
 }
 
 /* веь блок дата-часи */
