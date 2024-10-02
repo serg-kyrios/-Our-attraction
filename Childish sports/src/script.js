@@ -94,6 +94,11 @@ function displayClients() {
         listItem.textContent = `${client.name} - ${client.time} хв. - ${client.costPerMinute} грн/хв - Всього: ${client.totalCost} грн`;
         clientsList.appendChild(listItem);
     });
+    if (!clientName || !serviceTime || !serviceCost) {
+        responseMessage.textContent = 'Будь ласка, заповніть усі поля.';
+        responseMessage.classList.add('alert', 'alert-danger');
+        return;
+    }
 }
 
 // Функція для оновлення підсумкових даних
