@@ -1,9 +1,4 @@
-<!-- 
-// echo var_dump($_POST); -->
 
-<!-- 
-// $_POST=json_decode(file_get_contents("php://input"), true);
-// echo var_dump($_POST); -->
 <?php
 // Перевіряємо, чи дані були надіслані через POST
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -43,3 +38,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo json_encode(['message' => 'Метод не дозволений']);
 }
 
+// Валідація даних
+if (!is_numeric($clientData['time']) || !is_numeric($clientData['cost'])) {
+    http_response_code(400);
+    echo json_encode(['message' => 'Час і вартість повинні бути числами']);
+    exit;
+}

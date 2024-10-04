@@ -85,21 +85,21 @@ function recordClient() {
 }
 
 // Функція для відображення списку клієнтів
-function displayClients() {
-    const clientsList = document.getElementById('clientsList');
-    clientsList.innerHTML = ''; // Очищаємо список перед відображенням нових даних
+// function displayClients() {
+//     const clientsList = document.getElementById('clientsList');
+//     clientsList.innerHTML = ''; // Очищаємо список перед відображенням нових даних
 
-    clients.forEach((client) => {
-        const listItem = document.createElement('li');
-        listItem.textContent = `${client.name} - ${client.time} хв. - ${client.costPerMinute} грн/хв - Всього: ${client.totalCost} грн`;
-        clientsList.appendChild(listItem);
-    });
-    if (!clientName || !serviceTime || !serviceCost) {
-        responseMessage.textContent = 'Будь ласка, заповніть усі поля.';
-        responseMessage.classList.add('alert', 'alert-danger');
-        return;
-    }
-}
+//     clients.forEach((client) => {
+//         const listItem = document.createElement('li');
+//         listItem.textContent = `${client.name} - ${client.time} хв. - ${client.costPerMinute} грн/хв - Всього: ${client.totalCost} грн`;
+//         clientsList.appendChild(listItem);
+//     });
+//     if (!clientName || !serviceTime || !serviceCost) {
+//         responseMessage.textContent = 'Будь ласка, заповніть усі поля.';
+//         responseMessage.classList.add('alert', 'alert-danger');
+//         return;
+//     }
+// }
 
 // Функція для оновлення підсумкових даних
 function updateTotals() {
