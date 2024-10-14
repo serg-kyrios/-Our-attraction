@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     } else {
         // Відправляємо відповідь з помилкою
-        http_response_code(400);
+        http_response_code(4090);
         echo json_encode(['message' => 'Неповні дані']);
     }
 } else {

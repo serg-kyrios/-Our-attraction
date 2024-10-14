@@ -28,11 +28,14 @@ document.addEventListener('DOMContentLoaded', function () {
         )} грн`;
     }
 
-    // Завантаження клієнтів із сервера
+    // Завантаження клієнтів із сервера  server.php
     function loadClients() {
-        fetch('server.php', {
-            method: 'GET',
-        })
+        fetch(
+            'C:/MAMP/htdocs/Childish-sports-main-2/Childish sports/src/server.php',
+            {
+                method: 'GET',
+            }
+        )
             .then((response) => response.json())
             .then((data) => {
                 displayClients(data); // Виводимо клієнтів на екран
@@ -45,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
     }
 
-    // Функція для відображення спливаючого повідомлення
+    // Функція для відображення вспливаючого повідомлення
     function showPopupMessage(message, alertClass) {
         responseMessage.textContent = message;
         responseMessage.className = ''; // Очищуємо класи
