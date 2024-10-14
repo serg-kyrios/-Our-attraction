@@ -30,12 +30,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Завантаження клієнтів із сервера  server.php
     function loadClients() {
-        fetch(
-            'C:/MAMP/htdocs/Childish-sports-main-2/Childish sports/src/server.php',
-            {
-                method: 'GET',
-            }
-        )
+        fetch('http://localhost/Childish-sports-main-2/Childish sports/src', {
+            method: 'POST',
+        })
             .then((response) => response.json())
             .then((data) => {
                 displayClients(data); // Виводимо клієнтів на екран
@@ -82,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
         };
 
         // Відправляємо дані на сервер
-        fetch('server.php', {
+        fetch('http://localhost/Childish-sports-main-2/Childish sports/src', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
