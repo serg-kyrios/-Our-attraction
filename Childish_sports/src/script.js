@@ -24,9 +24,9 @@ let totalSum = 0; // Змінна для загальної суми
 let totalClients = 0; // Змінна для кількості клієнтів
 
 // Функція для розрахунку суми
-function calculateTotalCost(time, costPerMinute) {
-    return time * costPerMinute;
-}
+// function calculateTotalCost(time, costPerMinute) {
+//     return time * costPerMinute;
+// }
 
 function recordClient() {
     // Отримуємо дані з полів введення
@@ -128,12 +128,18 @@ function displayClients() {
     clientsList.innerHTML = ''; // Очищаємо список перед відображенням нових даних
 
     clients.forEach((client) => {
-        const listItem = document.createElement('li');
+        const listItem = document.createElement('div');
         // Відображаємо ім'я клієнта, час та загальну суму
+        listItem.classList.add('list-group-item');
         listItem.textContent = `${client.name} - ${
             client.time
         } хв. - ${client.totalCost.toFixed(2)} грн.`;
         clientsList.appendChild(listItem);
+        if (!clientName || !serviceTime || !serviceCost) {
+            responseMessage.textContent = 'Будь ласка, заповніть усі поля.';
+            responseMessage.classList.add('alert', 'alert-danger');
+            return;
+        }
     });
 }
 document
