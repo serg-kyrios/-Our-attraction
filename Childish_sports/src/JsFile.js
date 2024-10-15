@@ -6,42 +6,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const totalClientsElement = document.getElementById('totalClients');
     const totalCostElement = document.getElementById('totalCost');
     const saveBtn = document.querySelector('.saveBtn');
-    // Функція для відображення клієнтів
-    // function displayClients(clients) {
-    //     clientList.innerHTML = ''; // Очищення списку
-    //     let totalClients = 0;
-    //     let totalCost = 0;
-
-    //     // clients.forEach((client) => {
-    //     //     const listItem = document.createElement('li');
-    //     //     listItem.classList.add('list-group-item');
-    //     //     listItem.textContent = `${client.name} - ${client.time} хв. - ${client.cost} грн.`;
-    //     //     clientList.appendChild(listItem);
-
-    //     //     totalClients++;
-    //     //     totalCost += parseFloat(client.cost);
-    //     // });
-
-    //     totalClientsElement.textContent = `Загальна кількість відвідувачів: ${totalClients}`;
-    //     totalCostElement.textContent = `Загальна сума: ${totalCost.toFixed(
-    //         2
-    //     )} грн`;
-    // }
-    // function displayClients(clients) {
-    //     const clientList = document.getElementById('clientsList');
-    //     clientList.innerHTML = ''; // Очищуємо список
-
-    //     clients.forEach((client) => {
-    //         const listItem = document.createElement('div'); // Замість li використовуємо div
-    //         listItem.classList.add('list-group-item');
-    //         listItem.textContent = `${client.name} - ${client.time} хв. - ${client.cost} грн.`;
-    //         clientList.appendChild(listItem);
-    //     });
-    // }
 
     // Завантаження клієнтів із сервера  server.php
     function loadClients() {
-        fetch('http://localhost/Childish-sports-main-2/Childish_sports/src', {
+        fetch('http://localhost/Childish-sports-main-2/Childish_sports/src/', {
             method: 'POST',
         })
             .then((response) => response.json())
@@ -69,15 +37,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Зберігаємо клієнта і показуємо повідомлення
     saveBtn.addEventListener('click', function () {
-        const clientName = document.getElementById('clientName').value.trim();
-        const serviceTime = parseFloat(
-            document.getElementById('serviceTime').value.trim()
-        );
-        const serviceCost = parseFloat(
-            document.getElementById('serviceCost').value.trim()
-        );
+        // const clientName = (document.getElementById('clientName').value = '');
+        // const serviceTime = parseFloat;
+        // document.getElementById('serviceTime').value = '';
+        // const serviceCost = parseFloat(
+        //     (document.getElementById('serviceCost').value = '')
+        // );
 
-        if (!clientName || isNaN(serviceTime) || isNaN(serviceCost)) {
+        if (!clientName || !isNaN(serviceTime) || !isNaN(serviceCost)) {
             showPopupMessage('Будь ласка, заповніть усі поля.', 'alert-danger');
             return;
         }
@@ -88,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
             cost: serviceCost,
         };
 
-        fetch('http://localhost/Childish-sports-main-2/Childish sports/src', {
+        fetch('server.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
