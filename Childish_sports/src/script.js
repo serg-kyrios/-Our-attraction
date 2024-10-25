@@ -8,17 +8,6 @@ function calculateTotalCost(time) {
     return time * costPerMinute;
 }
 
-function showPopupMessage(message) {
-    const popup = document.getElementById('popupMessage');
-    popup.textContent = message;
-    popup.classList.add('show');
-
-    // Ховаємо повідомлення через 3 секунди
-    setTimeout(() => {
-        popup.classList.remove('show');
-    }, 3000);
-}
-
 let clients = []; // Масив для зберігання інформації про клієнтів
 let totalSum = 0; // Змінна для загальної суми
 let totalClients = 0; // Змінна для кількості клієнтів
@@ -31,6 +20,7 @@ let totalClients = 0; // Змінна для кількості клієнтів
 function recordClient() {
     // Отримуємо дані з полів введення
     const clientName = document.getElementById('clientName').value.trim();
+
     const serviceTime = parseFloat(
         document.getElementById('serviceTime').value
     );
@@ -116,7 +106,7 @@ function showPopupMessage(message) {
     const popup = document.getElementById('popupMessage');
     popup.textContent = message;
     popup.classList.add('show');
-
+    // Ховаємо повідомлення через 3 секунди
     setTimeout(() => {
         popup.classList.remove('show');
     }, 3000);
